@@ -1,31 +1,30 @@
 # Introduction
 
-**FaultNet:**
-Data-driven fault detection has been regarded as a 3D image segmentation task. The models trained from synthetic data are difficult to generalize in some surveys. Recently, training 3D fault segmentation using sparse manual 2D slices is thought to yield promising results, but manual labeling has many false negative labels (abnormal annotations), which is detrimental to training and consequently to detection performance. Motivated to train 3D fault segmentation networks under sparse 2D labels while suppressing false negative labels, we analyze the training process gradient and propose the Mask Dice (MD) loss. Moreover, the fault is an edge feature, and current encoder-decoder architectures widely used for fault detection (e.g., U-shape network) are not conducive to edge representation. Consequently, Fault-Net is proposed, which is designed for the characteristics of faults, employs high-resolution propagation features, and embeds MultiScale Compression Fusion block to fuse multi-scale information, which allows the edge information to be fully preserved during propagation and fusion, thus enabling advanced performance via few computational resources. Experimental demonstrates that MD loss supports the inclusion of human experience in training and suppresses false negative labels therein, enabling baseline models to improve performance and generalize to more surveys. Fault-Net is capable to provide a more stable and reliable interpretation of faults, it uses extremely low computational resources and inference is significantly faster than other models. Our method indicates optimal performance in comparison with several mainstream methods.
+**FaultSSL:**
+The prevailing methodology in data-driven fault detection leverages synthetic data for training neural networks. However, it grapples with challenges when it comes to generalization in surveys exhibiting complex structures. To enhance the generalization of models trained on limited synthetic datasets to a broader range of real-world data, we introduce FaultSSL, a semi-supervised fault detection framework. This method is based on the classical mean teacher structure, in which its supervised part employs synthetic data and a few 2D labels. The unsupervised component relyies on two meticulously devised proxy tasks, allowing it to incorporate vast unlabeled field data into the training process. The two proxy tasks are PaNning Consistency (PNC) and PaTching Consistency (PTC). PNC emphasizes the feature consistency in overlapping regions between two adjacent views in predicting the model. This allows for the extension of 2D slice labels to the global seismic volume.#xD;PTC emphasizes the spatially consistent nature of faults. It ensures that the predictions for the seismic, whether made on the entire volume or on individual patches, exhibit coherence without any noticeable artifacts at the patch boundaries. While the two proxy tasks serve different objectives, they uniformly contribute to the enhancement of performance. Experiments showcase the exceptional performance of FaultSSL. In surveys where other mainstream methods fail to deliver, we present reliable, continuous, and clear detection results. FaultSSL reveals a promising approach for incorporating large volumes of field data into training and promoting model generalization across broader surveys.
 
 # Quick start
 Get test data (F3 and Kerry3D): https://drive.google.com/drive/folders/1LEHd2VO9TZTOjrMuAQ7I446OfYDgcdWo?usp=sharing
     
     conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
-    pip install segyio,opencv_python
+    pip install segyio,opencv_python,cigvis
     cp ./download/F3.npy ./FaultNet/data/
     cd FaultNet
     python prediction.py --input data/F3.npy
 
-# Results
-<div align=center><img src="https://github.com/douyimin/FaultNet/blob/main/results/output.png" width="805" height="517" alt="Results"/><br/></div>
 
 # Cite us
    
-    @article{dou2023mda,
-    title={MDA GAN: Adversarial-Learning-based 3-D Seismic Data Interpolation and Reconstruction for Complex Missing},
-    author={Dou, Yimin and Li, Kewen and Duan, Hongjie and Li, Timing and Dong, Lin and Huang, Zongchao},
-    journal={IEEE Transactions on Geoscience and Remote Sensing},
-    volume={61},
-    pages={1--14},
-    year={2023},
-    publisher={IEEE}
-    }
+   @article{dou2024faultssl,
+   title={FaultSSL: Seismic Fault Detection via Semi-supervised learning},
+   author={Dou, Yimin and Li, Kewen and Dong, Minghui and Xiao, Yuan},
+   journal={Geophysics},
+   volume={89},
+   number={3},
+   pages={1--43},
+   year={2024},
+   publisher={Society of Exploration Geophysicists}
+   }
 
 # Contact us
 emindou3015@gmail.com
