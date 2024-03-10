@@ -15,16 +15,16 @@ Get test data (F3 and Kerry3D): https://drive.google.com/drive/folders/1LEHd2VO9
 
 # Cite us
    
-   @article{dou2024faultssl,
-   title={FaultSSL: Seismic Fault Detection via Semi-supervised learning},
-   author={Dou, Yimin and Li, Kewen and Dong, Minghui and Xiao, Yuan},
-   journal={Geophysics},
-   volume={89},
-   number={3},
-   pages={1--43},
-   year={2024},
-   publisher={Society of Exploration Geophysicists}
-   }
+    @article{dou2024faultssl,
+    title={FaultSSL: Seismic Fault Detection via Semi-supervised learning},
+    author={Dou, Yimin and Li, Kewen and Dong, Minghui and Xiao, Yuan},
+    journal={Geophysics},
+    volume={89},
+    number={3},
+    pages={1--43},
+    year={2024},
+    publisher={Society of Exploration Geophysicists}
+    }
 
 # Contact us
 emindou3015@gmail.com
