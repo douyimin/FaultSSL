@@ -9,10 +9,9 @@ Get test data :  [F3 and Kerry3D](https://drive.google.com/drive/folders/1LEHd2V
     
     conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
     pip install segyio,opencv_python,cigvis
-    cp ./download/F3.npy ./FaultNet/data/
-    cd FaultNet
+    cp ./download/F3.npy ./FaultSSL/data/
     python prediction.py --input data/F3.npy
-
+[F3](https://github.com/douyimin/FaultSSL/blob/main/results/1.png)
 
 # Cite us
    
