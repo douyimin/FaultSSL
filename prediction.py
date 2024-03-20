@@ -30,7 +30,7 @@ parser.add_argument('--iline', type=int, default=189,
 parser.add_argument('--xline', type=int, default=193,
                     help='crossline')  # 193 or 73,If none of them work, please fill the trace export in the commercial software and then read it.
 parser.add_argument('--infer_size', type=int, nargs='+', default=None,
-                    # If you want to infer Kerry_full.py, please use (768,176,176)
+                    # If you want to infer Kerry_full.npy, please use (768,176,176)
                     help='If None, the whole seismic volume is input.'
                          'If not None, the volume will be cut in blocks according to infer_size then input.'
                          'Shape = (tline,xline,iline) or (tline,iline,xline), must be divisible by 16')
