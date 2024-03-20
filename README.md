@@ -1,4 +1,3 @@
-The pre trained model will be uploaded before March 20th.
 # Introduction
 
 **FaultSSL:**
