@@ -12,6 +12,7 @@ Get test data :  [F3 and Kerry3D](https://drive.google.com/drive/folders/1LEHd2V
     conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
     pip install segyio,opencv_python,cigvis
     cp ./download/F3.npy ./FaultSSL/data/
+    cp ./download/IOUFirst.pt ./FaultSSL/network/
     python prediction.py --input data/F3.npy
 ![F3-kerry](https://github.com/douyimin/FaultSSL/blob/main/results.png)
 
