@@ -11,8 +11,8 @@ Get test data :  [F3 and Kerry3D](https://drive.google.com/drive/folders/1LEHd2V
     pip install segyio,opencv_python,cigvis
     cp ./download/F3.npy ./FaultSSL/data/
     python prediction.py --input data/F3.npy
-![F3](https://github.com/douyimin/FaultSSL/blob/main/results/1.png)
-![Kerry](https://github.com/douyimin/FaultSSL/blob/main/results/0.png)
+![F3-kerry](https://github.com/douyimin/FaultSSL/blob/main/results.png)
+
 # Cite us
    
     @article{dou2024faultssl,
