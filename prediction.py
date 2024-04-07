@@ -46,10 +46,10 @@ if __name__ == '__main__':
     model = torch.jit.load(args.network).to(device)
 
     if args.input[-3:] == 'npy':
-        data = np.load(args.input)  # Shape = (tline,xline,iline) or (tline,iline,xline),
+        data = np.load(args.input)  # Shape = (xline,iline,tline) or (iline,xline,tline,),
     else:
         data = segyio.open(args.input, iline=args.iline, xline=args.xline)
-        data = segyio.cube(data)  # Shape = (tline,xline,iline) or (tline,iline,xline),
+        data = segyio.cube(data)  # Shape = (xline,iline,tline) or (iline,xline,tline),
     if args.infer_size == None:
         infer_size = data.shape
     else:
